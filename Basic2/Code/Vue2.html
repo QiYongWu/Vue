@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <div id = "root">
+        <p>
+            name : {{name}}
+        </p>
+    </div>
+    
+    <div id = "root2">
+        <p>
+            age : {{age}}
+        </p>
+    </div>
+
+    <div id = "root3">
+        <p>
+            country : {{country}}
+        </p>
+    </div>
+    
+    <div id = "BeiJing">
+        university : {{university}}
+        address : {{address.toLowerCase()}}
+    </div>
+
+    <div id = "NanNing">
+        university : {{university}}
+        address : {{address.toUpperCase()}}
+    </div>
+
+    <div id = "root4">
+        {{Date.now()}}
+        {{1>2? 1: 2}}
+        
+    </div>
+    <script>
+        new Vue({
+            el : "#root4"
+        })
+
+        new Vue({
+            el : '#BeiJing',
+            data :{
+                university : '北京大学',
+                address : 'BeiJing China'
+            }
+        });
+
+        new Vue({
+            el : '#NanNing',
+            data : {
+                university : '广西大学',
+                address : 'NanNing China'
+            }
+        })
+
+        const x = new Vue({  //一个实例目前只能接管一个容器,只能改id分别对应
+            el : "#root",
+            data : {
+                name : "Dog",
+                
+            }
+        });
+
+        const x2 = new Vue({
+            el : "#root2",
+            data:{
+                age : 18
+            }
+        });
+
+        const x3 = new Vue({
+            el : "#root3",
+            data : {
+                country : "GuiLin China"
+            }
+        })
+    </script>
+</body>
+</html>

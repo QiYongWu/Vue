@@ -4,16 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 引入 Vue.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
-    <div id = "root">
+    <!--容器-->
+    <div id="root">
         <h1>
-        Hello vue
+        Hello : {{ name }}
+        What is it : {{type}}
+        Where : {{address}}
+        "Which Country" : {{country}}
         </h1>
+
+        
     </div>
-    
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js">
-        Vue.config.productionTip = false; // 阻值Vue启动时的生产提示
+
+    <script>
+        Vue.config.productionTip = false; // 阻止 Vue 启动时的生产提示
+
+        // 创建 Vue 实例
+        const x = new Vue({
+            el: '#root', // 指定当前 Vue 实例为 id 为 root 的容器服务
+            data: {   //用于为el所指定的容器去提供数据
+                name: 'Guet',
+                type: 'university',
+                address: 'GuiLin China',
+                country: 'China',
+               
+            }
+        });
     </script>
 </body>
 </html>

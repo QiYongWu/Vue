@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <div id = "root">
+        <h1>插值语法</h1>
+        <p>name :{{name}}</p>
+        <hr />
+
+        <h1>指令语法</h1>
+        <a  v-bind:href = "BaiDu_url" v-bind:address = "address">百度一下</a>
+        <a :href = "PDD_url" :address = "address2">拼多多</a>
+        <hr />
+    </div>
+    <script>
+        new Vue({
+            el : "#root",
+            data : {
+                name : 'Jack',
+                BaiDu_url :  'https:www.baidu.com/',
+                address : 'ShangHai',
+                PDD_url : 'https://pifa.pinduoduo.com/',
+                address2 : "BeiJing"
+            }
+        })
+        //root容器中的代码被称为【Vue模板】
+    </script>
+</body>
+</html>
